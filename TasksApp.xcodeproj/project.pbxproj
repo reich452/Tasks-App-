@@ -15,6 +15,8 @@
 		0159608E1E54F6B9009500C6 /* TaskDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0159608D1E54F6B9009500C6 /* TaskDetailTableViewController.swift */; };
 		015960901E54F72B009500C6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0159608F1E54F72B009500C6 /* CoreDataStack.swift */; };
 		015960931E54F7AC009500C6 /* TasksApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 015960911E54F7AC009500C6 /* TasksApp.xcdatamodeld */; };
+		015960951E54FB95009500C6 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015960941E54FB95009500C6 /* Task+Convenience.swift */; };
+		015960971E5503C4009500C6 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015960961E5503C4009500C6 /* TaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0159608D1E54F6B9009500C6 /* TaskDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewController.swift; sourceTree = "<group>"; };
 		0159608F1E54F72B009500C6 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		015960921E54F7AC009500C6 /* TasksApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TasksApp.xcdatamodel; sourceTree = "<group>"; };
+		015960941E54FB95009500C6 /* Task+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
+		015960961E5503C4009500C6 /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				015960891E54F5C4009500C6 /* View Controller */,
 				015960881E54F5BE009500C6 /* View */,
 				015960781E54F380009500C6 /* Main.storyboard */,
+				015960941E54FB95009500C6 /* Task+Convenience.swift */,
 				0159608C1E54F5DF009500C6 /* Resources */,
 			);
 			path = TasksApp;
@@ -89,6 +94,7 @@
 		0159608A1E54F5CC009500C6 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				015960961E5503C4009500C6 /* TaskController.swift */,
 			);
 			name = "Model Controller";
 			sourceTree = "<group>";
@@ -186,8 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015960971E5503C4009500C6 /* TaskController.swift in Sources */,
 				015960931E54F7AC009500C6 /* TasksApp.xcdatamodeld in Sources */,
 				015960871E54F5B5009500C6 /* TaskListTableViewController.swift in Sources */,
+				015960951E54FB95009500C6 /* Task+Convenience.swift in Sources */,
 				015960751E54F380009500C6 /* AppDelegate.swift in Sources */,
 				0159608E1E54F6B9009500C6 /* TaskDetailTableViewController.swift in Sources */,
 				015960901E54F72B009500C6 /* CoreDataStack.swift in Sources */,
