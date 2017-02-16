@@ -12,7 +12,7 @@ import CoreData
 
 extension Task {
     
-    @discardableResult convenience init(name: String, notes: String? = nil, due: NSDate? = nil, isComplete: Bool, context: NSManagedObjectContext = CoreDataStack.context) {
+    @discardableResult convenience init(name: String, notes: String? = nil, due: Date? = nil, isComplete: Bool = false, context: NSManagedObjectContext = CoreDataStack.context) {
         
     // This is saying that we want to put this new instance of Song in a specific managed object context (sandbox or scratchpad)
         
@@ -26,3 +26,6 @@ extension Task {
     }
     
 }
+
+
+

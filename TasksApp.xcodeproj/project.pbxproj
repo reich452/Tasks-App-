@@ -11,12 +11,13 @@
 		0159607A1E54F380009500C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015960781E54F380009500C6 /* Main.storyboard */; };
 		0159607C1E54F380009500C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0159607B1E54F380009500C6 /* Assets.xcassets */; };
 		0159607F1E54F380009500C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0159607D1E54F380009500C6 /* LaunchScreen.storyboard */; };
-		015960871E54F5B5009500C6 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015960861E54F5B5009500C6 /* TaskListTableViewController.swift */; };
 		0159608E1E54F6B9009500C6 /* TaskDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0159608D1E54F6B9009500C6 /* TaskDetailTableViewController.swift */; };
 		015960901E54F72B009500C6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0159608F1E54F72B009500C6 /* CoreDataStack.swift */; };
 		015960931E54F7AC009500C6 /* TasksApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 015960911E54F7AC009500C6 /* TasksApp.xcdatamodeld */; };
 		015960951E54FB95009500C6 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015960941E54FB95009500C6 /* Task+Convenience.swift */; };
 		015960971E5503C4009500C6 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015960961E5503C4009500C6 /* TaskController.swift */; };
+		015960991E552E02009500C6 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015960981E552E02009500C6 /* DateHelper.swift */; };
+		0159609B1E553A2C009500C6 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0159609A1E553A2C009500C6 /* ButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +27,13 @@
 		0159607B1E54F380009500C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0159607E1E54F380009500C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		015960801E54F380009500C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		015960861E54F5B5009500C6 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskListTableViewController.swift; path = ../TaskListTableViewController.swift; sourceTree = "<group>"; };
 		0159608D1E54F6B9009500C6 /* TaskDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewController.swift; sourceTree = "<group>"; };
 		0159608F1E54F72B009500C6 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		015960921E54F7AC009500C6 /* TasksApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TasksApp.xcdatamodel; sourceTree = "<group>"; };
 		015960941E54FB95009500C6 /* Task+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 		015960961E5503C4009500C6 /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		015960981E552E02009500C6 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		0159609A1E553A2C009500C6 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +66,11 @@
 		015960731E54F380009500C6 /* TasksApp */ = {
 			isa = PBXGroup;
 			children = (
+				015960781E54F380009500C6 /* Main.storyboard */,
 				0159608B1E54F5D7009500C6 /* Model */,
 				0159608A1E54F5CC009500C6 /* Model Controller */,
 				015960891E54F5C4009500C6 /* View Controller */,
 				015960881E54F5BE009500C6 /* View */,
-				015960781E54F380009500C6 /* Main.storyboard */,
-				015960941E54FB95009500C6 /* Task+Convenience.swift */,
 				0159608C1E54F5DF009500C6 /* Resources */,
 			);
 			path = TasksApp;
@@ -78,6 +79,7 @@
 		015960881E54F5BE009500C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0159609A1E553A2C009500C6 /* ButtonTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -85,7 +87,6 @@
 		015960891E54F5C4009500C6 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				015960861E54F5B5009500C6 /* TaskListTableViewController.swift */,
 				0159608D1E54F6B9009500C6 /* TaskDetailTableViewController.swift */,
 			);
 			name = "View Controller";
@@ -95,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				015960961E5503C4009500C6 /* TaskController.swift */,
+				015960981E552E02009500C6 /* DateHelper.swift */,
 			);
 			name = "Model Controller";
 			sourceTree = "<group>";
@@ -104,6 +106,7 @@
 			children = (
 				0159608F1E54F72B009500C6 /* CoreDataStack.swift */,
 				015960911E54F7AC009500C6 /* TasksApp.xcdatamodeld */,
+				015960941E54FB95009500C6 /* Task+Convenience.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -192,9 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0159609B1E553A2C009500C6 /* ButtonTableViewCell.swift in Sources */,
 				015960971E5503C4009500C6 /* TaskController.swift in Sources */,
+				015960991E552E02009500C6 /* DateHelper.swift in Sources */,
 				015960931E54F7AC009500C6 /* TasksApp.xcdatamodeld in Sources */,
-				015960871E54F5B5009500C6 /* TaskListTableViewController.swift in Sources */,
 				015960951E54FB95009500C6 /* Task+Convenience.swift in Sources */,
 				015960751E54F380009500C6 /* AppDelegate.swift in Sources */,
 				0159608E1E54F6B9009500C6 /* TaskDetailTableViewController.swift in Sources */,

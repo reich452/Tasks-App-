@@ -19,14 +19,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="72j-Cb-RWb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="72j-Cb-RWb" customClass="ButtonTableViewCell" customModule="TasksApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="72j-Cb-RWb" id="Cdr-Wg-kGh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZl-b8-6WC">
+                                            <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-Pn-ayO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-A6-UH5">
+                                                    <rect key="frame" x="332" y="0.0" width="27" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="Msg-4T-urF"/>
+                                                    </constraints>
+                                                    <state key="normal" image="incomplete"/>
+                                                    <connections>
+                                                        <action selector="buttonTapped:" destination="72j-Cb-RWb" eventType="touchUpInside" id="ihY-gk-lJp"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cZl-b8-6WC" firstAttribute="leading" secondItem="Cdr-Wg-kGh" secondAttribute="leading" constant="8" id="1XO-KP-Jy7"/>
+                                        <constraint firstAttribute="trailing" secondItem="cZl-b8-6WC" secondAttribute="trailing" constant="8" id="5Qh-N5-fkd"/>
+                                        <constraint firstItem="cZl-b8-6WC" firstAttribute="top" secondItem="Cdr-Wg-kGh" secondAttribute="top" constant="8" id="XW3-Zv-Ia4"/>
+                                        <constraint firstAttribute="bottom" secondItem="cZl-b8-6WC" secondAttribute="bottom" constant="8" id="vPb-HX-VWU"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="completeButton" destination="Xs9-A6-UH5" id="2ZW-Ag-rgj"/>
+                                    <outlet property="primaryLabel" destination="R9a-Pn-ayO" id="cYo-wr-HeV"/>
                                     <segue destination="3Rh-8d-nA5" kind="show" identifier="toDetailTVC" id="Ysj-GX-ode"/>
                                 </connections>
                             </tableViewCell>
@@ -98,6 +129,18 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WdT-pT-lGu">
+                                                    <rect key="frame" x="28" y="-87" width="320" height="216"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="508899549.90282601">
+                                                        <!--2017-02-16 00:59:09 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="datePickerValueChanged:" destination="3Rh-8d-nA5" eventType="valueChanged" id="RMm-6p-sJt"/>
+                                                        <outletCollection property="gestureRecognizers" destination="wzP-wx-bBU" appends="YES" id="jqa-AE-EIc"/>
+                                                    </connections>
+                                                </datePicker>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="leadingMargin" secondItem="cv3-fJ-Jhv" secondAttribute="leading" id="4om-Pm-UVv"/>
@@ -142,11 +185,30 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="FHV-pv-RXp">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZKR-vR-INZ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vMT-nF-PTW"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZKR-vR-INZ">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="3Rh-8d-nA5" id="l9v-Yx-IX1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vMT-nF-PTW">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="3Rh-8d-nA5" id="Nu9-AR-VGf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="WdT-pT-lGu" id="eFy-6t-lHG"/>
+                        <outlet property="dueDateTextField" destination="cv3-fJ-Jhv" id="SDi-MH-5s8"/>
+                        <outlet property="notesTextView" destination="1XE-CI-nVf" id="z2g-a1-ySf"/>
+                        <outlet property="taskNameTextField" destination="iIY-JL-m5e" id="gYE-hU-LxA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRc-1r-RKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wzP-wx-bBU">
+                    <connections>
+                        <action selector="userTappedView:" destination="3Rh-8d-nA5" id="K5f-mc-UR3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1885.5999999999999" y="52.623688155922046"/>
         </scene>
@@ -169,6 +231,9 @@
             <point key="canvasLocation" x="350" y="51"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="incomplete" width="256" height="256"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ysj-GX-ode"/>
     </inferredMetricsTieBreakers>
